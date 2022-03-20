@@ -8,10 +8,18 @@
 		@apply relative flex flex-col items-center;
 	}
 	a.nav-link {
-		@apply text-base font-semibold tracking-wider cursor-pointer transition-opacity duration-200 ease-in-out group-hover:opacity-80;
+		@apply text-base font-semibold tracking-wider cursor-pointer transition-opacity duration-300 ease-in-out group-hover:opacity-80;
 	}
 	hr.nav-hr {
-		@apply border-t-[3px] relative top-2 w-3/4 scale-x-0 group-hover:scale-x-100 group-focus:scale-x-100 group-active:scale-x-100 transition-transform duration-200 ease-in-out;
+		@apply border-t-[3px] relative top-2 w-3/4 scale-x-0 group-hover:scale-x-100 group-focus:scale-x-100 group-active:scale-x-100 transition-transform duration-300 ease-in-out;
+	}
+
+	/** Font Styles */
+	h1 {
+		@apply font-black text-4xl tracking-wide leading-none md:text-6xl md:tracking-wider;
+	}
+	p {
+		@apply font-normal text-base;
 	}
 }
 
@@ -21,6 +29,7 @@
 }
 
 body {
+	overflow-x: hidden;
 	background-color: black;
 }
 
@@ -75,4 +84,29 @@ body {
 }
 .nav-btn:active {
 	filter: brightness(0.8);
+}
+
+button.hero-btn {
+	padding: 16px 36px;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-weight: 600;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+}
+button.hero-btn:hover {
+	background-color: #f8682b;
+	box-shadow: 0px 15px 20px rgba(241, 87, 21, 0.4);
+	color: #fff;
+	transform: translateY(-7px);
+}
+button.hero-btn:active {
+	transform: translateY(-1px);
 }

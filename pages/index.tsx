@@ -13,46 +13,49 @@ export default function Home() {
 			<NavBar />
 
 			{/* TODO: Each section is 100vw and 100vh min */}
-			<main>
+			<main className="w-screen flex flex-col items-center overflow-x-hidden">
 				{/* Hero */}
-				{/* <section>
-					<section>
+				<section className="w-screen max-w-7xl h-screen pt-24 flex flex-col lg:items-center lg:flex-row-reverse lg:px-6">
+					<section className="relative w-full h-80 lg:w-1/2 md:h-[500px] lg:max-h-[578px] lg:h-[578px]">
 						<Image
-							src="/hero-img.jpg"
+							src="/assets/hero-img.jpg"
 							layout="fill"
 							objectFit="contain"
 							alt="hero"
 						/>
 					</section>
-					<section>
-						<h1>Pinterest for Space</h1>
-						<p>
+
+					<section className="text-center lg:text-left lg:items-start flex flex-col items-center lg:w-1/2 mt-4">
+						<h1 className="max-w-xs mb-4 md:max-w-lg md:mb-8">
+							Pinterest for Space
+						</h1>
+						<p className="max-w-xs md:max-w-lg">
 							A portfolio project that uses the NASA api to get images and
 							information regarding those images and projects them in a fashion
 							similar to that of Pinterest.
 						</p>
-						<button>Check Out</button>
+						<button className="mt-12 hero-btn">Check Out</button>
 					</section>
-				</section> */}
+				</section>
 
 				{/* Save & Share */}
-				{/* <section>
-					<section>
+				<section className="w-screen max-w-7xl h-screen pt-24 flex flex-col items-center lg:flex-row lg:px-6">
+					<section className="relative w-[80%] h-64 lg:w-1/2 md:h-[300px] lg:max-h-[400px] lg:h-[350px]">
 						<Image
-							src="/illustration-save.svg"
+							src="/assets/home/illustration-save.svg"
 							alt="illustration save and share"
 							layout="fill"
 							objectFit="contain"
 						/>
 					</section>
-					<section>
-						<h1>Save & Share</h1>
-						<p>
+					<section className="text-center mt-12 lg:text-left">
+						<h1 className="max-w-xs mb-4 md:max-w-lg md:mb-8">Save & Share</h1>
+						<p className="max-w-xs md:max-w-lg">
 							Get access to a large collection of images directly from NASA.
 							Save them into your favorites and share them across platforms.
 						</p>
 					</section>
-				</section> */}
+				</section>
 
 				{/* Detailed info */}
 				{/* <section>

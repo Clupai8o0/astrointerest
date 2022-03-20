@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const NavBar = () => {
 	return (
-		<header className="w-screen flex justify-center">
+		<header className="w-screen flex justify-center fixed bg-black shadow-lg z-50">
 			<nav className="max-w-7xl w-screen flex items-center justify-between h-24 px-6">
 				{/* Logo */}
 				<section>
@@ -49,9 +49,7 @@ const NavBar = () => {
 
 						<li className="hidden md:flex">
 							<Link href="/auth/register">
-								<a className="nav-btn">
-									Sign Up
-								</a>
+								<a className="nav-btn">Sign Up</a>
 							</Link>
 						</li>
 					</ul>
