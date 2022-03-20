@@ -1,21 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 
+//* components
 import Footer from "../components/Footer";
-import NavBar from "../components/Navbar";
+import Head from "../components/Head";
+import NavBar from "../components/NavBar";
 
 export default function Home() {
 	return (
 		<>
+			<Head />
 			<NavBar />
 
-      {/* TODO: Each section is 100vw and 100vh min */}
+			{/* TODO: Each section is 100vw and 100vh min */}
 			<main>
 				{/* Hero */}
-				<section>
+				{/* <section>
 					<section>
 						<Image
-							src="hero-img.jpg"
+							src="/hero-img.jpg"
 							layout="fill"
 							objectFit="contain"
 							alt="hero"
@@ -30,13 +33,13 @@ export default function Home() {
 						</p>
 						<button>Check Out</button>
 					</section>
-				</section>
+				</section> */}
 
 				{/* Save & Share */}
-				<section>
+				{/* <section>
 					<section>
 						<Image
-							src="illustration-save.svg"
+							src="/illustration-save.svg"
 							alt="illustration save and share"
 							layout="fill"
 							objectFit="contain"
@@ -49,31 +52,31 @@ export default function Home() {
 							Save them into your favorites and share them across platforms.
 						</p>
 					</section>
-				</section>
+				</section> */}
 
 				{/* Detailed info */}
-				<section>
+				{/* <section>
 					<div>
 						<video autoPlay loop style={{ width: "500px", height: "500px" }}>
-							<source src="/video-stars.mp4" />
+							<source src="//video-stars.mp4" />
 						</video>
 					</div>
 
 					<h1>Get detailed info about what you&apos;re looking at</h1>
-				</section>
+				</section> */}
 
 				{/* Join */}
-				<section>
+				{/* <section>
 					<div>
 						<h1>Join Today</h1>
 						<Link href="/auth/register">
 							<a>Sign Up</a>
 						</Link>
 					</div>
-				</section>
+				</section> */}
 			</main>
 
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }

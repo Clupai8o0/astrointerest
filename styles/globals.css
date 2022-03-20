@@ -3,9 +3,76 @@
 @tailwind utilities;
 
 @layer components {
-
+	/** Nav */
+	li.nav-list {
+		@apply relative flex flex-col items-center;
+	}
+	a.nav-link {
+		@apply text-base font-semibold tracking-wider cursor-pointer transition-opacity duration-200 ease-in-out group-hover:opacity-80;
+	}
+	hr.nav-hr {
+		@apply border-t-[3px] relative top-2 w-3/4 scale-x-0 group-hover:scale-x-100 group-focus:scale-x-100 group-active:scale-x-100 transition-transform duration-200 ease-in-out;
+	}
 }
 
 * {
-  font-family: "Poppins", sans-serif;
+	font-family: "Poppins", sans-serif;
+	color: white;
+}
+
+body {
+	background-color: black;
+}
+
+.nav-btn {
+	--color: #d90429;
+	padding: 10px 36px;
+	background-color: transparent;
+	border-radius: 5em;
+
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+
+	transition: 0.5s;
+	font-weight: 600;
+	font-size: 16px;
+
+	border: 2px solid;
+	font-family: inherit;
+	color: var(--color);
+	z-index: 1;
+	letter-spacing: 0.6px;
+}
+.nav-btn:hover {
+	color: white;
+}
+.nav-btn::after,
+.nav-btn::before {
+	content: "";
+	display: block;
+	width: 50px;
+	height: 50px;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	border-radius: 50%;
+	z-index: -1;
+	background-color: var(--color);
+	transition: 1s ease;
+}
+.nav-btn::before {
+	top: -1em;
+	left: -1em;
+}
+.nav-btn::after {
+	left: calc(100% + 1em);
+	top: calc(100% + 1em);
+}
+.nav-btn:hover::before,
+.nav-btn:hover::after {
+	height: 410px;
+	width: 410px;
+}
+.nav-btn:active {
+	filter: brightness(0.8);
 }
