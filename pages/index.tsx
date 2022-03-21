@@ -4,7 +4,7 @@ import Link from "next/link";
 //* components
 import Footer from "../components/Footer";
 import Head from "../components/Head";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/Navbar";
 
 export default function Home() {
 	return (
@@ -14,7 +14,7 @@ export default function Home() {
 
 			<main className="w-screen flex flex-col items-center overflow-x-hidden">
 				{/* Hero */}
-				<section className="section-container flex flex-col lg:items-center lg:flex-row-reverse lg:px-6">
+				<section className="section-container flex flex-col lg:items-center lg:flex-row-reverse lg:px-6 snap-center">
 					<section className="relative w-full h-80 lg:w-1/2 md:h-[500px] lg:max-h-[578px] lg:h-[578px]">
 						<Image
 							src="/assets/hero-img.jpg"
@@ -71,7 +71,7 @@ export default function Home() {
 				</section>
 			</main>
 
-			{/* <Footer /> */}
+			<Footer />
 		</>
 	);
 }
