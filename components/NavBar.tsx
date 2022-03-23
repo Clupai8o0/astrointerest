@@ -5,7 +5,11 @@ import Link from "next/link";
 const NavBar = () => {
 	return (
 		<header className="w-screen flex justify-center fixed bg-black shadow-lg z-50">
-			<nav className="max-w-7xl w-screen flex items-center justify-between h-24 px-6">
+			<nav
+				className="max-w-7xl w-screen flex items-center justify-between h-24 px-6"
+				data-aos="fade-down"
+				data-aos-duration="800"
+			>
 				{/* Logo */}
 				<section>
 					<div className="md:hidden">
