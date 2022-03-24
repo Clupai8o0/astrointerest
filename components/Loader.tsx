@@ -1,11 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 
-const Loader = ({ show }: { show: boolean }) => {
+const Loader = ({
+	show,
+	routeChange,
+}: {
+	show: boolean;
+	routeChange: boolean;
+}) => {
 	return (
 		<div
-			className={`z-[100] absolute w-screen h-screen flex items-center justify-center bg-black ${
-				!show && "slide-out-left"
+			className={`z-[100] fixed w-screen h-screen flex items-center justify-center bg-black ${
+			routeChange
+				? "slide-in-right"
+				: show
+				? "transform translate-x-0"
+				: "slide-out-left"
 			}`}
 			style={{ perspective: 1000 }}
 		>

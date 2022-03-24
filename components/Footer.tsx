@@ -26,7 +26,7 @@ const Footer = () => {
 	];
 
 	return (
-		<footer className="flex flex-col items-center text-center">
+		<footer className="flex flex-col items-center text-center relative z-50">
 			<section className="my-12 max-w-md px-8 lg:max-w-7xl">
 				<p className="text-sm font-light">
 					Portfolio project by @Clupai8o0. Inspired by 20 javascript projects by

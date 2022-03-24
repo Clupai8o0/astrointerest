@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,34 +7,34 @@ import Head from "../components/Head";
 import NavBar from "../components/Navbar";
 import Loader from "../components/Loader";
 
-//* Animation
-import AOS from "aos";
-import "aos/dist/aos.css";
+//* Hooks
+import { useLoader } from "../lib/hooks";
+
+//* Utility Function
+import delay from "../lib/delay";
+
+//* Styles
+import Styles from "../styles/Home.module.css";
+import cls from "classnames";
+
+//? -> Delay before page loads and shows the content
+//* Done so as to allow a smooth transition between pages...
+export async function getStaticProps() {
+	await delay(0.6);
+	return {
+		props: {},
+	};
+}
 
 export default function Home() {
-	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
-		let timeout: NodeJS.Timeout;
-
-		if (!loading) {
-			timeout = setTimeout(() => {
-				AOS.init();
-				AOS.refresh();
-			}, 1600);
-		}
-
-		return () => {
-			clearTimeout(timeout);
-		};
-	}, [loading]);
+	const { loading, setLoading, routeChange } = useLoader();
 
 	return (
 		<>
 			<Head />
 			<NavBar />
 
-			<Loader show={loading} />
+			<Loader show={loading} routeChange={routeChange} />
 
 			<main
 				className={`w-screen flex flex-col items-center overflow-x-hidden ${
@@ -46,7 +45,7 @@ export default function Home() {
 				<section className="section-container flex flex-col lg:items-center lg:flex-row-reverse lg:px-6 snap-center">
 					<section className="relative w-full h-80 lg:w-1/2 md:h-[500px] lg:max-h-[578px] lg:h-[578px]">
 						<Image
-							src="/assets/hero-img.jpg"
+							src="/assets/home/hero-img.jpg"
 							layout="fill"
 							objectFit="contain"
 							alt="hero"
@@ -76,14 +75,15 @@ export default function Home() {
 							information regarding those images and projects them in a fashion
 							similar to that of Pinterest.
 						</p>
-						<button
-							className="mt-12 hero-btn"
+						<div
 							data-aos="fade-up"
 							data-aos-duration="800"
 							data-aos-delay="1000"
 						>
-							Check Out
-						</button>
+							<button className={cls("mt-12", Styles.heroBtn)}>
+								Check Out
+							</button>
+						</div>
 					</section>
 				</section>
 
@@ -130,7 +130,7 @@ export default function Home() {
 
 						<Link href="/auth/register">
 							<a
-								className="join-btn mt-8 heartbeat"
+								className={cls(Styles.joinBtn, "mt-8", Styles.heartbeat)}
 								title="Sign up"
 								data-aos="zoom-in"
 								data-aos-duration="800"

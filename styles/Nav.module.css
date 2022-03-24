@@ -1,0 +1,52 @@
+.navBtn {
+	--color: #d90429;
+	padding: 10px 36px;
+	background-color: transparent;
+	border-radius: 5em;
+
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+
+	transition: 0.5s;
+	font-weight: 600;
+	font-size: 16px;
+
+	border: 2px solid;
+	font-family: inherit;
+	color: var(--color);
+	z-index: 1;
+	letter-spacing: 0.6px;
+}
+.navBtn:hover {
+	color: white;
+}
+.navBtn::after,
+.navBtn::before {
+	content: "";
+	display: block;
+	width: 50px;
+	height: 50px;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	border-radius: 50%;
+	z-index: -1;
+	background-color: var(--color);
+	transition: 1s ease;
+}
+.navBtn::before {
+	top: -1em;
+	left: -1em;
+}
+.navBtn::after {
+	left: calc(100% + 1em);
+	top: calc(100% + 1em);
+}
+.navBtn:hover::before,
+.navBtn:hover::after {
+	height: 410px;
+	width: 410px;
+}
+.navBtn:active {
+	filter: brightness(0.8);
+}
