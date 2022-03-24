@@ -16,7 +16,7 @@ import Input from "../../components/Input.auth";
 import { useLoader } from "../../lib/hooks";
 
 //* Styles
-import Styles from "../../styles/Register.auth.module.css";
+import Styles from "../../styles/Auth.module.css";
 
 //* Utility Function
 import delay from "../../lib/delay";
