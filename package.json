@@ -7,8 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "docker-build": "docker build -t astrointerest .",
-    "docker-run": "docker run -p 3000:3000 astrointerest"
+    "docker-build": "docker build -t astrointerest",
+    "docker-build-dev": "docker build -t astrointerest-dev -f dev.Dockerfile .",
+    "docker-start": "docker run -p 3000:3000 astrointerest",
+    "docker-run": "docker run -p 3000:3000 -v /$(pwd):/app astrointerest-dev" 
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
