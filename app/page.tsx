@@ -1,15 +1,11 @@
 import SignInButton from "@/components/SignInButton";
 import Image from "next/image";
-
+import Logo from "@/components/Logo";
 export default function Home() {
   return (
     <main className="flex h-screen flex-col bg-neutral-900 bg-cover bg-right sm:bg-[url('/pcBGHome.png')]">
       <nav className= "flex justify-between bg-transparent">
-        <div className="flex mx-10 my-5">
-          <img src="/Logo.png"/>
-          <h1 className="max-sm:hidden ml-5 mt-2 text-lg font-bold font-Raleway">AstroInterest</h1>
-
-        </div>
+        <Logo/>
         <div className="mx-10 my-5">
           <SignInButton />
         </div>
