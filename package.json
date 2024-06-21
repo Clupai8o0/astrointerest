@@ -10,11 +10,12 @@
     "docker-build": "docker build -t astrointerest",
     "docker-build-dev": "docker build -t astrointerest-dev -f dev.Dockerfile .",
     "docker-start": "docker run -p 3000:3000 astrointerest",
-    "docker-run": "docker run -p 3000:3000 -v /$(pwd):/app astrointerest-dev" 
+    "docker-run": "docker run -p 3000:3000 -v /$(pwd):/app astrointerest-dev"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "colors": "^1.4.0",
     "lucide-react": "^0.390.0",
     "next": "14.2.3",
     "react": "^18",
