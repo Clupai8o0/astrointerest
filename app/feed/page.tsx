@@ -1,8 +1,14 @@
 import React from 'react'
-
+import NavbarSignedIn from '@/components/NavbarSignedIn'
 function Feed() {
   return (
-    <div>Feed</div>
+      <>
+        <NavbarSignedIn />
+        <main className='py-24 px-6 text-center'>
+          Feed
+        </main>
+      
+      </>
   )
 }
 
