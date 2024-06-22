@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-
-
 	:root {
 		--background: 0 0% 3.9%;
 		--foreground: 0 0% 98%;
@@ -18,8 +15,8 @@
 		--popover: 0 0% 3.9%;
 		--popover-foreground: 0 0% 98%;
 
-		--primary: 0 0% 98%;
-		--primary-foreground: 0 0% 9%;
+		--primary: 267, 72%, 54%;
+		--primary-foreground: 267, 86%, 65%;
 
 		--secondary: 0 0% 14.9%;
 		--secondary-foreground: 0 0% 98%;
@@ -46,4 +43,8 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+}
+
+body {
+	background: #121212;
 }
