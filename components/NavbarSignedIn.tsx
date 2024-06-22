@@ -9,7 +9,7 @@ const NavbarSignedIn = () => {
 		<header className="w-full flex justify-center px-6 relative z-10">
 			<nav className="max-w-7xl w-full py-4 md:py-8 flex items-center justify-between">
 				<Logo />
-				<Input className="bg-stone-900 mx-24 max-w-full" type="search" placeholder="Search..."/>
+				<Input className="bg-stone-900 mx-12 md:mx-24 max-w-full" type="search" placeholder="Search..."/>
 				<Avatar>
 					<AvatarImage src="https://github.com/shadcn.png" />
 					<AvatarFallback>CN</AvatarFallback>
