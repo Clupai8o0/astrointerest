@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
 	return (
-		<>
+    <>
 			<Navbar />
 			<main className="flex relative justify-center w-full h-[90vh] px-6">
 				<div className="max-w-7xl w-full h-full">
@@ -26,13 +26,13 @@ export default function Home() {
 				<img
 					src="/mobile-hero-img.png"
 					alt="astronomy pins aligned in mobile view"
-					className="absolute z-0 -bottom-2/3 -right-1/3 scale-[.8] rotate-[30deg] md:hidden"
+					className="absolute z-0 -bottom-2/3 -right-1/3 scale-[.8] rotate-[30deg] md:hidden "
 				/>
 				<img
 					src="/desktop-hero-img.png"
 					alt="astronomy pins aligned in desktop view"
-					className="absolute hidden md:block z-0 scale-[0.9] lg:scale-[0.7] rotate-[30deg] -bottom-1/2 lg:-bottom-[100%] xl:-bottom-[150%] -right-1/3 lg:-right-1/4"
-				/>
+					className="absolute hidden md:block z-0 scale-[0.9] lg:scale-[0.7] rotate-[30deg] -bottom-1/2  lg:-bottom-[100%] xl:-bottom-[150%] -right-1/3 lg:-right-1/4"
+				/> 
 			</main>
 		</>
 	);
