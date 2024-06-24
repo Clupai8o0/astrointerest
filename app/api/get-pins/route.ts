@@ -18,13 +18,25 @@ export async function GET(req: Request) {
 			}&count=${count || 12}`
 		);
 		const data = await resp.json();
-		return handleSuccess("Successfully GET pins from NASA api", data);
+
+		//* Cleaning the data
+		const furnishedData = data.map((img: any) => ({
+			title: img.title,
+			desc: img.explanation,
+			img: {
+				url_mini: img.url,
+				url_large: img.hdurl
+			},
+			author: img.copyright
+		}))
+
+		return handleSuccess("Successfully GET pins from NASA api", furnishedData);
 	} catch (e: any) {
 		return handleError("Could not get pins from NASA api", e);
 	}
 }
 
-//* Example response
+//* Example response from nasa api
 // [
 // 		{
 // 			"copyright": "Anglo-Australian Observatory",
