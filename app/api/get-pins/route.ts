@@ -20,16 +20,13 @@ export async function GET(req: Request) {
 		const data = await resp.json();
 
 		//* Cleaning and furnishing the data
-		const cleanedData = data.filter((img: any) => img.media_type === "image")
+		const cleanedData = data.filter((img: any) => img.media_type === "image");
 		const furnishedData = cleanedData.map((img: any) => ({
 			title: img.title,
 			desc: img.explanation,
-			img: {
-				url_mini: img.url,
-				url_large: img.hdurl
-			},
-			author: img.copyright
-		}))
+			img_mini: img.url,
+			img_large: img.hdurl,
+		}));
 
 		return handleSuccess("Successfully GET pins from NASA api", furnishedData);
 	} catch (e: any) {
