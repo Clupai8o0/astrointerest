@@ -19,8 +19,9 @@ export async function GET(req: Request) {
 		);
 		const data = await resp.json();
 
-		//* Cleaning the data
-		const furnishedData = data.map((img: any) => ({
+		//* Cleaning and furnishing the data
+		const cleanedData = data.filter((img: any) => img.media_type === "image")
+		const furnishedData = cleanedData.map((img: any) => ({
 			title: img.title,
 			desc: img.explanation,
 			img: {
