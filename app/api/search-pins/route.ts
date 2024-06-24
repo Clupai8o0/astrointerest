@@ -13,10 +13,9 @@ export async function GET(req: Request) {
 				const final = {
 					title: resData.title,
 					desc: resData.description,
-					img: {
-						url_mini: "",
-						url_large: "",
-					},
+
+					img_mini: "",
+					img_large: "",
 				};
 
 				//* getting images
@@ -28,13 +27,13 @@ export async function GET(req: Request) {
 						const excludedUrl = url.slice(0, url.length - 4); // url without the ending .jpg and .png
 
 						//* mini image
-						if (excludedUrl.endsWith("small_1")) final.img.url_mini = url;
-						if (excludedUrl.endsWith("small")) final.img.url_mini = url;
+						if (excludedUrl.endsWith("small_1")) final.img_mini = url;
+						if (excludedUrl.endsWith("small")) final.img_mini = url;
 
 						//* large image
-						if (excludedUrl.endsWith("large_1")) final.img.url_large = url;
-						if (excludedUrl.endsWith("large")) final.img.url_large = url;
-						if (excludedUrl.endsWith("orig")) final.img.url_large = url;
+						if (excludedUrl.endsWith("large_1")) final.img_large = url;
+						if (excludedUrl.endsWith("large")) final.img_large = url;
+						if (excludedUrl.endsWith("orig")) final.img_large = url;
 					}
 				});
 
