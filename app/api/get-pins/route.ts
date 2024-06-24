@@ -18,8 +18,36 @@ export async function GET(req: Request) {
 			}&count=${count || 12}`
 		);
 		const data = await resp.json();
-		return handleSuccess("Successfully GET pins from NASA api", data);
+
+		//* Cleaning and furnishing the data
+		const cleanedData = data.filter((img: any) => img.media_type === "image")
+		const furnishedData = cleanedData.map((img: any) => ({
+			title: img.title,
+			desc: img.explanation,
+			img: {
+				url_mini: img.url,
+				url_large: img.hdurl
+			},
+			author: img.copyright
+		}))
+
+		return handleSuccess("Successfully GET pins from NASA api", furnishedData);
 	} catch (e: any) {
 		return handleError("Could not get pins from NASA api", e);
 	}
 }
+
+//* Example response from nasa api
+// [
+// 		{
+// 			"copyright": "Anglo-Australian Observatory",
+// 			"date": "2002-04-24",
+// 			"explanation": "Unspeakable beauty and unimaginable bedlam can be found together in the Trifid Nebula. Also known as M20, this photogenic nebula is visible with good binoculars towards the constellation of Sagittarius. The energetic processes of star formation create not only the colors but the chaos.  The red-glowing gas results from high-energy starlight striking interstellar hydrogen gas.  The dark dust filaments that lace M20 were created in the atmospheres of cool giant stars and in the debris from supernovae explosions.  Which bright young stars light up the blue reflection nebula is still being investigated.  The light from M20 we see today left perhaps 3000 years ago, although the exact distance remains unknown.  Light takes about 50 years to cross M20.",
+// 			"hdurl": "https://apod.nasa.gov/apod/image/0204/trifid_aao_big.jpg",
+// 			"media_type": "image",
+// 			"service_version": "v1",
+// 			"title": "The Trifid Nebula from AAO",
+// 			"url": "https://apod.nasa.gov/apod/image/0204/trifid_aao.jpg"
+// 		}
+// 	 ...
+// ]
